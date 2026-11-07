@@ -27,7 +27,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.animation.Interpolator
-import android.window.OnBackInvokedDispatcher
 import androidx.core.view.updateLayoutParams
 import com.android.app.animation.Interpolators.EMPHASIZED_ACCELERATE
 import com.android.app.animation.Interpolators.EMPHASIZED_DECELERATE
@@ -39,7 +38,7 @@ import com.android.launcher3.popup.RoundedArrowDrawable
 import com.android.launcher3.util.Themes
 import com.android.launcher3.views.ActivityContext
 
-import app.lawnchair.theme.color.tokens.ColorTokens
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens
 
 private const val ENTER_DURATION_MS = 300L
 private const val EXIT_DURATION_MS = 150L

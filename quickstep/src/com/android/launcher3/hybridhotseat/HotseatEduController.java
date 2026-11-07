@@ -41,8 +41,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import app.lawnchair.ui.preferences.PreferenceActivity;
-import app.lawnchair.ui.preferences.navigation.Predictions;
+import com.android.androidium.lawnchair.ui.preferences.PreferenceActivity;
+import com.android.androidium.lawnchair.ui.preferences.navigation.Predictions;
 
 /**
  * Controller class for managing user onboaridng flow for hybrid hotseat

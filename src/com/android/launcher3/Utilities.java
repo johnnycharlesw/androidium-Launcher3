@@ -55,7 +55,6 @@ import android.os.DeadObjectException;
 import android.os.Handler;
 import android.os.Message;
 import android.os.TransactionTooLargeException;
-import android.provider.Settings;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -107,8 +106,8 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-import app.lawnchair.icons.ExtendedBitmapDrawable;
-import app.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.icons.ExtendedBitmapDrawable;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
 
 /**
  * Various utilities shared amongst the Launcher's classes.

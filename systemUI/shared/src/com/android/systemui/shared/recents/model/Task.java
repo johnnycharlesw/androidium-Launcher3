@@ -39,7 +39,7 @@ import androidx.annotation.Nullable;
 
 import com.android.internal.util.ArrayUtils;
 
-import app.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
 
 import java.io.PrintWriter;
 import java.util.Objects;

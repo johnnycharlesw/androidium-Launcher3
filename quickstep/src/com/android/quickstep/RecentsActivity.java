@@ -45,7 +45,6 @@ import android.view.RemoteAnimationAdapter;
 import android.view.RemoteAnimationTarget;
 import android.view.SurfaceControl.Transaction;
 import android.view.View;
-import android.window.RemoteTransition;
 import android.window.SplashScreen;
 
 import androidx.annotation.NonNull;
@@ -97,7 +96,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.List;
 
-import app.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
 
 /**
  * A recents activity that shows the recently launched tasks as swipable task cards.

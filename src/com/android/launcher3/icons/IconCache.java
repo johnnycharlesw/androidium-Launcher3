@@ -87,9 +87,9 @@ import java.util.stream.Stream;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import app.lawnchair.LawnchairActivityCachingLogic;
-import app.lawnchair.gestures.ui.LawnchairShortcutActivity;
-import app.lawnchair.icons.LawnchairIconProvider;
+import com.android.androidium.lawnchair.LawnchairActivityCachingLogic;
+import com.android.androidium.lawnchair.gestures.ui.LawnchairShortcutActivity;
+import com.android.androidium.lawnchair.icons.LawnchairIconProvider;
 
 /**
  * Cache of application icons.  Icons can be made from any thread.

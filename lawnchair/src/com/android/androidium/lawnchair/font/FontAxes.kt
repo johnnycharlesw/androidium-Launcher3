@@ -1,0 +1,10 @@
+package com.android.androidium.lawnchair.font
+
+object FontAxes {
+    const val WEIGHT = "wght"
+    const val OPTICAL_SIZE = "opsz"
+
+    fun mapToString(axes: Map<String, Float>): String {
+        return axes.entries.joinToString(", ") { "'${it.key}' ${it.value}" }
+    }
+}

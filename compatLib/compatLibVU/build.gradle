@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'app.lawnchair.compatlib.fourteen'
+    namespace 'com.android.androidium.lawnchair.compatlib.fourteen'
 }
 
 addFrameworkJar('framework-14.jar')

@@ -50,11 +50,8 @@ import com.android.launcher3.Flags;
 import com.android.launcher3.Insettable;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.util.Themes;
 
-import java.util.function.Consumer;
-
-import app.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
 
 /**
  * {@link PageIndicator} which shows dots per page. The active page is shown with the current

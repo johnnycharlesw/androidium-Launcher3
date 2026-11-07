@@ -49,9 +49,8 @@ import androidx.annotation.UiThread;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-import app.lawnchair.preferences2.PreferenceManager2;
-import com.android.launcher3.BuildConfig;
-import com.android.launcher3.BuildConfigs;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
+
 import com.android.launcher3.CellLayout;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Hotseat;
@@ -79,7 +78,7 @@ import com.android.launcher3.util.window.WindowManagerProxy;
 import com.android.launcher3.views.BaseDragLayer;
 import com.android.launcher3.widget.LauncherWidgetHolder;
 
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

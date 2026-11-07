@@ -40,7 +40,7 @@ import com.android.launcher3.util.ResourceBasedOverride;
 
 import org.chickenhook.restrictionbypass.Unseal;
 
-import app.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
 
 /**
  * Utility class to handle one time initializations of the main process

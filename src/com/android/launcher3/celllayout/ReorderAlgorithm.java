@@ -19,7 +19,6 @@ import android.graphics.Rect;
 import android.view.View;
 
 import com.android.launcher3.CellLayout;
-import com.android.launcher3.Utilities;
 import com.android.launcher3.util.CellAndSpan;
 import com.android.launcher3.util.GridOccupancy;
 
@@ -29,7 +28,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
 
 /**
  * Contains the logic of a reorder.

@@ -45,7 +45,6 @@ import com.android.launcher3.testing.TestLogging
 import com.android.launcher3.testing.shared.TestProtocol
 import com.android.launcher3.util.KFloatProperty
 import com.android.launcher3.util.OverviewReleaseFlags.enableOverviewIconMenu
-import com.android.launcher3.Utilities
 import com.android.launcher3.util.RunnableList
 import com.android.launcher3.util.SplitConfigurationOptions
 import com.android.launcher3.util.TransformingTouchDelegate
@@ -71,7 +70,7 @@ import com.android.quickstep.util.RecentsOrientedState
 import com.android.wm.shell.shared.desktopmode.DesktopModeStatus.enableMultipleDesktops
 import kotlin.math.roundToInt
 
-import app.lawnchair.theme.color.tokens.ColorTokens
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens
 
 /** TaskView that contains all tasks that are part of the desktop. */
 class DesktopTaskView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :

@@ -25,15 +25,12 @@ import android.content.Context;
 import android.graphics.Color;
 
 import com.android.launcher3.DeviceProfile;
-import com.android.launcher3.R;
 import com.android.launcher3.statemanager.BaseState;
-import com.android.quickstep.RecentsActivity;
-import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.ActivityContext;
 import com.android.launcher3.views.ScrimColors;
 import com.android.quickstep.views.RecentsViewContainer;
 
-import app.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
 
 /**
  * State definition for Fallback recents

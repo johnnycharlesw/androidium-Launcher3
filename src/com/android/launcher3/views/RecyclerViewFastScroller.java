@@ -21,7 +21,6 @@ import static androidx.core.view.HapticFeedbackConstantsCompat.CLOCK_TICK;
 import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE;
 
 import static com.android.launcher3.views.RecyclerViewFastScroller.FastScrollerLocation.ALL_APPS_SCROLLER;
-import static com.android.launcher3.views.RecyclerViewFastScroller.FastScrollerLocation.WIDGET_SCROLLER;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -58,7 +57,7 @@ import com.android.launcher3.util.Themes;
 import java.util.Collections;
 import java.util.List;
 
-import app.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
 
 /**
  * The track and scrollbar that shows when you scroll the list.

@@ -49,8 +49,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 
-import app.lawnchair.compat.LawnchairQuickstepCompat;
-
 /**
  * Wrapper around {@link com.android.systemui.shared.system.RecentsAnimationListener} which
  * delegates callbacks to multiple listeners on the main thread

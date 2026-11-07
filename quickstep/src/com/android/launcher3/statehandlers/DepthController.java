@@ -44,9 +44,9 @@ import com.android.quickstep.util.BaseDepthControllerImpl;
 import java.io.PrintWriter;
 import java.util.function.Consumer;
 
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
-import app.lawnchair.compat.LawnchairQuickstepCompat;
-import app.lawnchair.preferences2.PreferenceManager2;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
 
 /**
  * Controls blur and wallpaper zoom, for the Launcher surface only.

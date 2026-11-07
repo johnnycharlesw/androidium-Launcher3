@@ -140,7 +140,6 @@ import com.android.launcher3.util.ActivityOptionsWrapper;
 import com.android.launcher3.util.DynamicResource;
 import com.android.launcher3.util.RunnableList;
 import com.android.launcher3.util.StableViewInfo;
-import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.FloatingIconView;
 import com.android.launcher3.widget.LauncherAppWidgetHostView;
 import com.android.quickstep.LauncherBackAnimationController;
@@ -181,9 +180,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map.Entry;
 
-import app.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
 
 /**
  * Manages the opening and closing app transitions from Launcher

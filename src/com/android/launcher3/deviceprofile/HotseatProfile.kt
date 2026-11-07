@@ -17,11 +17,8 @@
 package com.android.launcher3.deviceprofile
 
 import android.content.res.Resources
-import android.graphics.Rect
-import app.lawnchair.hotseat.HotseatMode
-import app.lawnchair.preferences2.PreferenceManager2
+import com.android.androidium.lawnchair.hotseat.HotseatMode
 import com.android.launcher3.InvariantDeviceProfile
-import com.android.launcher3.InvariantDeviceProfile.INDEX_DEFAULT
 import com.android.launcher3.R
 import com.android.launcher3.responsive.CalculatedHotseatSpec
 

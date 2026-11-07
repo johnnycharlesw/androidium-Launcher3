@@ -52,14 +52,13 @@ import com.android.launcher3.celllayout.DelegatedCellDrawing;
 import com.android.launcher3.graphics.PathWrapper;
 import com.android.launcher3.graphics.ShapeDelegate;
 import com.android.launcher3.graphics.ThemeManager;
-import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.ActivityContext;
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
 
-import app.lawnchair.preferences2.PreferenceManager2;
-import app.lawnchair.theme.color.ColorOption;
-import app.lawnchair.theme.color.tokens.ColorTokens;
-import app.lawnchair.util.LawnchairUtilsKt;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
+import com.android.androidium.lawnchair.theme.color.ColorOption;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.util.LawnchairUtilsKt;
 
 /**
  * This object represents a FolderIcon preview background. It stores drawing /

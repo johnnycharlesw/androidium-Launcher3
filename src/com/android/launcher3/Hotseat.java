@@ -58,17 +58,17 @@ import java.io.PrintWriter;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import app.lawnchair.hotseat.DisabledHotseat;
-import app.lawnchair.hotseat.HotseatMode;
-import app.lawnchair.hotseat.HotseatPagedView;
-import app.lawnchair.hotseat.LawnchairHotseat;
-import app.lawnchair.preferences.PreferenceManager;
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
-import app.lawnchair.preferences2.PreferenceManager2;
+import com.android.androidium.lawnchair.hotseat.DisabledHotseat;
+import com.android.androidium.lawnchair.hotseat.HotseatMode;
+import com.android.androidium.lawnchair.hotseat.HotseatPagedView;
+import com.android.androidium.lawnchair.hotseat.LawnchairHotseat;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
 
 /**
  * View class that represents the bottom dock of the home screen.
- * Hosts a {@link app.lawnchair.hotseat.HotseatPagedView} of icon grids plus an optional QSB.
+ * Hosts a {@link com.android.androidium.lawnchair.hotseat.HotseatPagedView} of icon grids plus an optional QSB.
  */
 public class Hotseat extends FrameLayout implements Insettable {
 

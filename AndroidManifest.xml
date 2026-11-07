@@ -21,7 +21,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-sdk android:targetSdkVersion="30" android:minSdkVersion="26"
+    <uses-sdk android:targetSdkVersion="30" android:minSdkVersion="29"
         tools:overrideLibrary="com.kieronquinn.app.smartspacer.sdk.client"/>
     <!--
     Manifest entries specific to Launcher3. This is merged with AndroidManifest-common.xml.
@@ -33,7 +33,7 @@
         android:protectionLevel="signature|privileged" />
 
     <application
-        android:name="app.lawnchair.LawnchairApp"
+        android:name="com.android.androidium.lawnchair.AndroidiumLauncher"
         android:backupAgent="com.android.launcher3.LauncherBackupAgent"
         android:fullBackupOnly="true"
         android:fullBackupContent="@xml/backupscheme"
@@ -51,7 +51,7 @@
         attributes and intent filters the same
         -->
         <activity
-            android:name="app.lawnchair.LawnchairLauncher"
+            android:name="com.android.androidium.lawnchair.AndroidiumLauncher"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"

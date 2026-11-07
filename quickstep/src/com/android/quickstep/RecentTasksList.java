@@ -27,7 +27,6 @@ import android.app.KeyguardManager;
 import android.app.TaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.pm.ParceledListSlice;
 import android.os.Process;
 import android.os.RemoteException;
 import android.util.SparseBooleanArray;
@@ -38,7 +37,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.launcher3.statehandlers.DesktopVisibilityController;
 import com.android.launcher3.util.DaggerSingletonTracker;
-import com.android.launcher3.Utilities;
 import com.android.launcher3.util.LooperExecutor;
 import com.android.quickstep.util.DesktopTask;
 import com.android.quickstep.util.ExternalDisplaysKt;
@@ -70,8 +68,8 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import app.lawnchair.LawnchairApp;
-import app.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.LawnchairApp;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
 
 /**
  * Manages the recent task list from the system, caching it as necessary.

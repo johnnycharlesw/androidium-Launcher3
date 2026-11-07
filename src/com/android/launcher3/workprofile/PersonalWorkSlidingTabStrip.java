@@ -17,8 +17,6 @@ package com.android.launcher3.workprofile;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.RippleDrawable;
-import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -31,9 +29,9 @@ import com.android.launcher3.R;
 import com.android.launcher3.pageindicators.PageIndicator;
 import com.android.launcher3.views.ActivityContext;
 
-import app.lawnchair.font.FontManager;
-import app.lawnchair.theme.color.tokens.ColorStateListTokens;
-import app.lawnchair.theme.drawable.DrawableTokens;
+import com.android.androidium.lawnchair.font.FontManager;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorStateListTokens;
+import com.android.androidium.lawnchair.theme.drawable.DrawableTokens;
 
 /**
  * Supports two indicator colors, dedicated for personal and work tabs.

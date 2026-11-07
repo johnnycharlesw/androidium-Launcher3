@@ -18,10 +18,10 @@
 }
 
 # Lawnchair specific rules.
--keep,allowshrinking,allowoptimization class app.lawnchair.LawnchairProto$* { *; }
--keep,allowshrinking,allowoptimization class app.lawnchair.LawnchairApp { *; }
--keep,allowshrinking,allowoptimization class app.lawnchair.LawnchairLauncher { *; }
--keep,allowshrinking,allowoptimization class app.lawnchair.compatlib.** { *; }
+-keep,allowshrinking,allowoptimization class com.android.androidium.lawnchair.LawnchairProto$* { *; }
+-keep,allowshrinking,allowoptimization class com.android.androidium.lawnchair.LawnchairApp { *; }
+-keep,allowshrinking,allowoptimization class com.android.androidium.lawnchair.LawnchairLauncher { *; }
+-keep,allowshrinking,allowoptimization class com.android.androidium.lawnchair.compatlib.** { *; }
 
 -keep,allowshrinking,allowoptimization class com.google.protobuf.Timestamp { *; }
 -keep class * extends com.google.protobuf.GeneratedMessageLite { *; }

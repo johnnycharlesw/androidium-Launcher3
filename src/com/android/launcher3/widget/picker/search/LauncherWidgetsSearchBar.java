@@ -27,8 +27,8 @@ import androidx.annotation.Nullable;
 import com.android.launcher3.ExtendedEditText;
 import com.android.launcher3.R;
 
-import app.lawnchair.font.FontManager;
-import app.lawnchair.theme.drawable.DrawableTokens;
+import com.android.androidium.lawnchair.font.FontManager;
+import com.android.androidium.lawnchair.theme.drawable.DrawableTokens;
 
 /**
  * View for a search bar with an edit text with a cancel button.

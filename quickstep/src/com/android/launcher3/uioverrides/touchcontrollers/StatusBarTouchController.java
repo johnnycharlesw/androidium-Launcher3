@@ -51,10 +51,10 @@ import com.google.android.msdl.data.model.MSDLToken;
 import java.util.function.Supplier;
 import java.lang.reflect.InvocationTargetException;
 
-import app.lawnchair.LawnchairAppKt;
-import app.lawnchair.LawnchairLauncher;
-import app.lawnchair.gestures.config.GestureHandlerConfig;
-import app.lawnchair.util.CompatibilityKt;
+import com.android.androidium.lawnchair.LawnchairAppKt;
+import com.android.androidium.lawnchair.AndroidiumLauncher;
+import com.android.androidium.lawnchair.gestures.config.GestureHandlerConfig;
+import com.android.androidium.lawnchair.util.CompatibilityKt;
 
 /**
  * TouchController for handling touch events that get sent to the StatusBar. Once the
@@ -114,7 +114,7 @@ public class StatusBarTouchController implements TouchController {
     @SuppressLint({"WrongConstant", "PrivateApi"})
     private void expand() {
         // LC-Note: For pulling down on notification panel
-        if (mLauncher instanceof LawnchairLauncher launcher) {
+        if (mLauncher instanceof AndroidiumLauncher launcher) {
             launcher.getGestureController().handle(GestureHandlerConfig.OpenNotifications.INSTANCE);
         } else {
             // LC-Note: Fallback using older style for expanding the notifications panel

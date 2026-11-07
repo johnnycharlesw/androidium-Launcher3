@@ -72,8 +72,8 @@ import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
-import app.lawnchair.LawnchairApp;
-import app.lawnchair.LawnchairAppKt;
+import com.android.androidium.lawnchair.LawnchairApp;
+import com.android.androidium.lawnchair.LawnchairAppKt;
 
 /**
  * Utility class which maintains an instance of Launcher database and provides utility methods

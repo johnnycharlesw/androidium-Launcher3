@@ -28,7 +28,7 @@ import androidx.annotation.VisibleForTesting;
 import com.android.launcher3.BuildConfig;
 import com.android.launcher3.Flags;
 
-import app.lawnchair.util.CompatibilityKt;
+import com.android.androidium.lawnchair.util.CompatibilityKt;
 import com.android.launcher3.Utilities;
 
 /**

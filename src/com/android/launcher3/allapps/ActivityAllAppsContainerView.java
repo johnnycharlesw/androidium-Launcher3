@@ -59,7 +59,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.view.WindowInsets;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
@@ -95,7 +94,6 @@ import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.pm.UserCache;
 import com.android.launcher3.util.UserIconInfo;
 import com.android.launcher3.recyclerview.AllAppsRecyclerViewPool;
-import com.android.launcher3.util.ItemInfoMatcher;
 import com.android.launcher3.util.Preconditions;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.ActivityContext;
@@ -113,15 +111,13 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
-import static com.topjohnwu.superuser.internal.Utils.context;
-import app.lawnchair.allapps.LawnchairAlphabeticalAppsList;
-import app.lawnchair.font.FontManager;
-import app.lawnchair.preferences.PreferenceManager;
-import app.lawnchair.preferences2.PreferenceManager2;
-import app.lawnchair.theme.color.tokens.ColorTokens;
-import app.lawnchair.util.LawnchairUtilsKt;
-import app.lawnchair.ui.StretchRecyclerViewContainer;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.allapps.LawnchairAlphabeticalAppsList;
+import com.android.androidium.lawnchair.font.FontManager;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.util.LawnchairUtilsKt;
 
 /**
  * All apps container view with search support for use in a dragging activity.

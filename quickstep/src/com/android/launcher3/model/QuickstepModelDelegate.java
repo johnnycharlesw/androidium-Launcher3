@@ -30,21 +30,12 @@ import static com.android.launcher3.model.PredictionHelper.getBundleForHotseatPr
 import static com.android.launcher3.model.PredictionHelper.getBundleForWidgetPredictions;
 import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
 
-import android.Manifest;
-import static java.util.stream.Collectors.toCollection;
-
 import android.app.StatsManager;
 import android.app.prediction.AppPredictionContext;
 import android.app.prediction.AppPredictionManager;
 import android.app.prediction.AppTargetEvent;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.LauncherActivityInfo;
-import android.content.pm.LauncherApps;
 import android.content.pm.PackageManager;
-import android.content.pm.ShortcutInfo;
-import android.os.Bundle;
-import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.StatsEvent;
@@ -56,7 +47,6 @@ import androidx.annotation.WorkerThread;
 
 import com.android.launcher3.ConstantItem;
 import com.android.launcher3.InvariantDeviceProfile;
-import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.dagger.ApplicationContext;
@@ -79,8 +69,7 @@ import java.util.ArrayList;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import app.lawnchair.LawnchairApp;
-import app.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
 
 /**
  * Model delegate which loads prediction items

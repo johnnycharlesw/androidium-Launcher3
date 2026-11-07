@@ -144,21 +144,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-import app.lawnchair.hotseat.HotseatPagedView;
-import app.lawnchair.preferences2.PreferenceCacheExtensionsKt;
-import static app.lawnchair.util.LawnchairUtilsKt.toBitmap;
-import app.lawnchair.LawnchairApp;
-import app.lawnchair.LawnchairAppKt;
-import app.lawnchair.preferences.PreferenceManager;
-import app.lawnchair.preferences2.PreferenceManager2;
-import app.lawnchair.smartspace.DoubleShadowTextView;
-import app.lawnchair.smartspace.SmartspaceAppWidgetProvider;
-import app.lawnchair.smartspace.model.LawnchairSmartspace;
-import app.lawnchair.smartspace.model.SmartspaceMode;
-import app.lawnchair.theme.drawable.DrawableTokens;
-import app.lawnchair.util.LawnchairUtilsKt;
+import com.android.androidium.lawnchair.hotseat.HotseatPagedView;
+import com.android.androidium.lawnchair.preferences2.PreferenceCacheExtensionsKt;
+import com.android.androidium.lawnchair.LawnchairAppKt;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
+import com.android.androidium.lawnchair.smartspace.SmartspaceAppWidgetProvider;
+import com.android.androidium.lawnchair.smartspace.model.LawnchairSmartspace;
+import com.android.androidium.lawnchair.smartspace.model.SmartspaceMode;
 
 /**
  * The workspace is a wide area with a wallpaper and a finite number of pages.

@@ -44,7 +44,6 @@ import com.android.launcher3.util.NavigationMode;
 import com.android.quickstep.dagger.QuickstepBaseAppComponent;
 import com.android.quickstep.util.RecentsOrientedState;
 import com.android.systemui.shared.Flags;
-import com.android.systemui.shared.system.QuickStepContract;
 import com.android.systemui.shared.system.TaskStackChangeListener;
 import com.android.systemui.shared.system.TaskStackChangeListeners;
 
@@ -54,9 +53,7 @@ import dagger.assisted.AssistedInject;
 
 import java.io.PrintWriter;
 
-import javax.inject.Inject;
-
-import app.lawnchair.util.LawnchairUtilsKt;
+import com.android.androidium.lawnchair.util.LawnchairUtilsKt;
 
 /**
  * Helper class for transforming touch events

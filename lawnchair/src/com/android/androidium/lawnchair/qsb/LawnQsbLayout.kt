@@ -1,0 +1,239 @@
+package com.android.androidium.lawnchair.qsb
+
+import android.content.Context
+import android.content.Intent
+import android.graphics.Rect
+import android.graphics.RectF
+import android.util.AttributeSet
+import android.view.View
+import android.widget.FrameLayout
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.core.view.children
+import androidx.lifecycle.lifecycleScope
+import com.android.androidium.lawnchair.AndroidiumLauncher
+import com.android.androidium.lawnchair.animateToAllApps
+import com.android.androidium.lawnchair.launcher
+import com.android.androidium.lawnchair.preferences.observeAsState
+import com.android.androidium.lawnchair.preferences.preferenceManager
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2
+import com.android.androidium.lawnchair.preferences2.asState
+import com.android.androidium.lawnchair.preferences2.firstCached
+import com.android.androidium.lawnchair.qsb.providers.AppSearch
+import com.android.androidium.lawnchair.qsb.providers.QsbSearchProvider
+import com.android.androidium.lawnchair.ui.preferences.PreferenceActivity
+import com.android.androidium.lawnchair.ui.preferences.navigation.Search
+import com.android.androidium.lawnchair.ui.theme.LawnchairTheme
+import com.android.androidium.lawnchair.util.ProvideLifecycleState
+import com.android.launcher3.BaseActivity
+import com.android.launcher3.DeviceProfile
+import com.android.launcher3.R
+import com.android.launcher3.logging.StatsLogManager
+import com.android.launcher3.views.ActivityContext
+import com.android.launcher3.views.OptionsPopupView
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.launch
+
+class LawnQsbLayout(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
+
+    private val activity: ActivityContext = ActivityContext.lookupContext<BaseActivity>(context)
+    private val composeView = ComposeView(context)
+    private lateinit var preferenceManager2: PreferenceManager2
+
+    private lateinit var searchProvider: QsbSearchProvider
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    override fun onFinishInflate() {
+        super.onFinishInflate()
+
+        preferenceManager2 = PreferenceManager2.getInstance(context)
+        searchProvider = getSearchProvider(context, preferenceManager2)
+
+        composeView.apply {
+            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+            setContent {
+                LawnchairTheme {
+                    ProvideLifecycleState {
+                        val context = LocalContext.current
+
+                        val prefs = preferenceManager()
+                        val prefs2 = preferenceManager2
+
+                        val searchProviderPref by prefs2.hotseatQsbProvider.asState()
+                        val searchProvider = remember(searchProviderPref, context) {
+                            getSearchProvider(context, searchProviderPref)
+                        }
+                        val themed by prefs2.themedHotseatQsb.asState()
+                        val voiceIntent = remember(searchProvider, context) {
+                            getVoiceIntent(searchProvider, context)
+                        }
+
+                        val state = rememberHotseatQsbState(
+                            searchProvider = searchProvider,
+                            themed = themed,
+                            showMic = voiceIntent != null,
+                            showLens = false,
+                        )
+
+                        val style = buildQsbStyle(
+                            context = LocalContext.current,
+                            themed = themed,
+                            backgroundColor = getHotseatBackgroundColor(context, themed),
+                            backgroundAlpha = prefs.hotseatQsbAlpha.observeAsState().value,
+                            cornerRadius = prefs.hotseatQsbCornerRadius.observeAsState().value,
+                            // Use light color as strokeColor is a static color that doesn't use darkColor
+                            strokeColor = prefs2.strokeColorStyle.asState().value.colorPreferenceEntry.lightColor.invoke(context),
+                            strokeWidth = prefs.hotseatQsbStrokeWidth.observeAsState().value,
+                        )
+
+                        val actions = QsbActions(
+                            onQsbClick = {
+                                val launcher = context.launcher
+                                launcher.lifecycleScope.launch {
+                                    if (prefs2.matchHotseatQsbStyle.firstCached()) {
+                                        val searchUiManager = launcher.appsView.searchUiManager
+                                        searchUiManager.setDirectFocus(true)
+                                        searchUiManager.editText?.showKeyboard()
+                                        launcher.animateToAllApps()
+                                    } else {
+                                        searchProvider.launch(launcher)
+                                    }
+                                }
+                            },
+                            onQsbLongClick = ::openOptions,
+                            onStartIconClick = null,
+                            onEndIconClick = { id ->
+                                runCatching {
+                                    when (id) {
+                                        QsbIconId.MIC -> voiceIntent?.let { context.startActivity(it) }
+                                        else -> null
+                                    }
+                                }
+                            },
+                        )
+
+                        LawnQsbUi(
+                            state = state,
+                            style = style,
+                            actions = actions,
+                        )
+                    }
+                }
+            }
+        }
+
+        // Stop Compose QSB from disappearing
+        // https://stackoverflow.com/questions/72781705/jetpack-compose-view-not-drawing-when-coming-back-to-fragment/77496737#77496737
+        composeView.addOnAttachStateChangeListener(object : OnAttachStateChangeListener {
+            override fun onViewAttachedToWindow(v: View) {
+                requestLayout()
+                composeView.disposeComposition()
+            }
+            override fun onViewDetachedFromWindow(v: View) {
+                composeView.disposeComposition()
+            }
+        })
+
+        addView(
+            composeView,
+            LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT),
+        )
+
+    }
+
+    private fun openOptions() {
+        val launcher = context.launcher
+        val pos = Rect()
+        launcher.dragLayer.getDescendantRectRelativeToSelf(composeView, pos)
+        OptionsPopupView.show<AndroidiumLauncher>(launcher, RectF(pos), listOf(getCustomizeOption()), true)
+    }
+
+    private fun getCustomizeOption() = OptionsPopupView.OptionItem(
+        context,
+        R.string.action_customize,
+        R.drawable.ic_setting,
+        StatsLogManager.LauncherEvent.IGNORE,
+    ) {
+        context.startActivity(PreferenceActivity.createIntent(context, Search()))
+        true
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val dp = activity.deviceProfile
+        // Unlike Phone, for Foldable/Tablet we let the original onMeasure do that instead since it
+        // matched what we need. It perfectly fit the QSB with the grid.
+        if (!dp.deviceProperties.isPhone) {
+            if (!composeView.isAttachedToWindow) {
+                setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.getSize(heightMeasureSpec))
+                return
+            }
+
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+            return
+        }
+
+        val requestedWidth = MeasureSpec.getSize(widthMeasureSpec)
+        val height = MeasureSpec.getSize(heightMeasureSpec)
+        val cellWidth = DeviceProfile.calculateCellWidth(
+            requestedWidth,
+            dp.cellLayoutBorderSpacePx.x,
+            dp.numShownHotseatIcons,
+        )
+        val iconSize = (dp.iconSizePx * 0.92f).toInt()
+        val widthReduction = cellWidth - iconSize
+        val width = requestedWidth - widthReduction
+        setMeasuredDimension(width, height)
+
+        if (!composeView.isAttachedToWindow) {
+            // Ignore to prevent crash on preview contexts
+            return
+        }
+
+        children.forEach { child ->
+            measureChildWithMargins(child, widthMeasureSpec, widthReduction, heightMeasureSpec, 0)
+        }
+    }
+
+    companion object {
+
+        fun getVoiceIntent(
+            provider: QsbSearchProvider,
+            context: Context,
+        ): Intent? {
+            val intent = if (provider.supportVoiceIntent) provider.createVoiceIntent() else null
+
+            return if (intent == null || !resolveIntent(context, intent)) {
+                null
+            } else {
+                intent
+            }
+        }
+
+
+        fun getSearchProvider(
+            context: Context,
+            provider: QsbSearchProvider,
+        ): QsbSearchProvider {
+            return if (provider == AppSearch ||
+                resolveIntent(context, provider.createSearchIntent()) ||
+                resolveIntent(context, provider.createWebsiteIntent())
+            ) {
+                provider
+            } else {
+                AppSearch
+            }
+        }
+
+        fun getSearchProvider(
+            context: Context,
+            preferenceManager: PreferenceManager2,
+        ): QsbSearchProvider {
+            return getSearchProvider(context, preferenceManager.hotseatQsbProvider.firstCached())
+        }
+
+        fun resolveIntent(context: Context, intent: Intent): Boolean = context.packageManager.resolveActivity(intent, 0) != null
+    }
+}

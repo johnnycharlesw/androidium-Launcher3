@@ -57,26 +57,26 @@ import com.android.launcher3.widget.util.WidgetSizeHandler;
 
 import javax.inject.Named;
 
-import app.lawnchair.DeviceProfileOverrides;
-import app.lawnchair.HeadlessWidgetsManager;
-import app.lawnchair.LawnchairActivityCachingLogic;
-import app.lawnchair.NotificationManager;
-import app.lawnchair.data.folder.service.FolderService;
-import app.lawnchair.data.iconoverride.IconOverrideRepository;
-import app.lawnchair.data.wallpaper.service.WallpaperService;
-import app.lawnchair.font.FontCache;
-import app.lawnchair.font.FontManager;
-import app.lawnchair.font.googlefonts.GoogleFontsListing;
-import app.lawnchair.icons.iconpack.IconPackProvider;
-import app.lawnchair.icons.shape.IconShapeManager;
-import app.lawnchair.preferences.PreferenceManager;
-import app.lawnchair.predictions.LawnchairPredictionManager;
-import app.lawnchair.preferences2.PreferenceManager2;
-import app.lawnchair.smartspace.provider.SmartspaceProvider;
-import app.lawnchair.theme.ThemeProvider;
-import app.lawnchair.ui.preferences.components.colorpreference.ColorPreferenceModelList;
-import app.lawnchair.ui.preferences.data.liveinfo.LiveInformationManager;
-import app.lawnchair.util.LawnchairWindowManagerProxy;
+import com.android.androidium.lawnchair.DeviceProfileOverrides;
+import com.android.androidium.lawnchair.HeadlessWidgetsManager;
+import com.android.androidium.lawnchair.LawnchairActivityCachingLogic;
+import com.android.androidium.lawnchair.NotificationManager;
+import com.android.androidium.lawnchair.data.folder.service.FolderService;
+import com.android.androidium.lawnchair.data.iconoverride.IconOverrideRepository;
+import com.android.androidium.lawnchair.data.wallpaper.service.WallpaperService;
+import com.android.androidium.lawnchair.font.FontCache;
+import com.android.androidium.lawnchair.font.FontManager;
+import com.android.androidium.lawnchair.font.googlefonts.GoogleFontsListing;
+import com.android.androidium.lawnchair.icons.iconpack.IconPackProvider;
+import com.android.androidium.lawnchair.icons.shape.IconShapeManager;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.predictions.LawnchairPredictionManager;
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2;
+import com.android.androidium.lawnchair.smartspace.provider.SmartspaceProvider;
+import com.android.androidium.lawnchair.theme.ThemeProvider;
+import com.android.androidium.lawnchair.ui.preferences.components.colorpreference.ColorPreferenceModelList;
+import com.android.androidium.lawnchair.ui.preferences.data.liveinfo.LiveInformationManager;
+import com.android.androidium.lawnchair.util.LawnchairWindowManagerProxy;
 import dagger.BindsInstance;
 
 /**

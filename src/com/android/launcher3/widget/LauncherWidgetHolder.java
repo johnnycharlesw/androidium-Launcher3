@@ -24,7 +24,6 @@ import static com.android.launcher3.widget.LauncherAppWidgetProviderInfo.fromPro
 import static com.android.launcher3.widget.ListenableAppWidgetHost.getWidgetHolderExecutor;
 
 import android.app.ActivityOptions;
-import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
@@ -49,8 +48,6 @@ import com.android.launcher3.dagger.LauncherComponentProvider;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.testing.TestLogging;
 import com.android.launcher3.testing.shared.TestProtocol;
-import com.android.launcher3.util.ActivityOptionsWrapper;
-import com.android.launcher3.util.ResourceBasedOverride;
 import com.android.launcher3.util.SafeCloseable;
 import com.android.launcher3.views.ActivityContext;
 import com.android.launcher3.widget.ListenableAppWidgetHost.ProviderChangedListener;
@@ -65,8 +62,6 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
-
-import app.lawnchair.LawnchairAppWidgetHostView;
 
 /**
  * A wrapper for LauncherAppWidgetHost. This class is created so the AppWidgetHost could run in

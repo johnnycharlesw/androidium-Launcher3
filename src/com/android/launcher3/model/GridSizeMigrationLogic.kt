@@ -20,9 +20,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Point
 import android.util.Log
 import androidx.annotation.VisibleForTesting
-import app.lawnchair.preferences2.PreferenceManager2
-import com.android.launcher3.BuildConfig
-import com.android.launcher3.BuildConfigs
+import com.android.androidium.lawnchair.preferences2.PreferenceManager2
 import com.android.launcher3.Flags
 import com.android.launcher3.LauncherPrefs
 import com.android.launcher3.LauncherPrefs.Companion.get
@@ -44,7 +42,7 @@ import com.android.launcher3.provider.LauncherDbUtils.shiftWorkspaceByXCells
 import com.android.launcher3.util.CellAndSpan
 import com.android.launcher3.util.GridOccupancy
 import com.android.launcher3.util.IntArray
-import app.lawnchair.preferences2.firstCached
+import com.android.androidium.lawnchair.preferences2.firstCached
 
 class GridSizeMigrationLogic {
     /**

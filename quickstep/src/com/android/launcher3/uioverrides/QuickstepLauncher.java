@@ -93,9 +93,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.HapticFeedbackConstants;
-import android.view.InflateException;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AnalogClock;
@@ -111,8 +109,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import androidx.core.content.ContextCompat;
-import com.android.app.viewcapture.ViewCaptureFactory;
 import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Flags;
@@ -209,7 +205,6 @@ import com.android.quickstep.views.RecentsViewContainer;
 import com.android.quickstep.views.TaskView;
 import com.android.systemui.animation.back.FlingOnBackAnimationCallback;
 import com.android.systemui.shared.recents.model.Task;
-import com.android.systemui.shared.system.ActivityManagerWrapper;
 import com.android.systemui.unfold.RemoteUnfoldSharedComponent;
 import com.android.systemui.unfold.UnfoldTransitionFactory;
 import com.android.systemui.unfold.UnfoldTransitionProgressProvider;
@@ -223,7 +218,6 @@ import com.android.wm.shell.shared.bubbles.BubbleBarLocation;
 import com.android.wm.shell.shared.desktopmode.DesktopModeStatus;
 import com.android.wm.shell.shared.desktopmode.DesktopState;
 
-import java.lang.reflect.InvocationTargetException;
 import kotlin.Unit;
 
 import java.io.FileDescriptor;
@@ -238,8 +232,8 @@ import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import app.lawnchair.LawnchairApp;
-import app.lawnchair.compat.LawnchairQuickstepCompat;
+import com.android.androidium.lawnchair.LawnchairApp;
+import com.android.androidium.lawnchair.compat.LawnchairQuickstepCompat;
 
 public class QuickstepLauncher extends Launcher implements RecentsViewContainer,
         SystemShortcut.BubbleActivityStarter {
@@ -1665,7 +1659,7 @@ public class QuickstepLauncher extends Launcher implements RecentsViewContainer,
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         // ClockEventDelegate / setClockEventDelegate were added in Android 15 (API 35); on older
         // platforms we must fall back to the framework default to avoid loading classes that do
-        // not exist on the device (b/353166316, lawnchair issue #6781).
+        // not exist on the device (b/353166316, androidium-Launcher3 issue #6781).
         if (Utilities.ATLEAST_V) {
             switch (name) {
                 case "TextClock", "android.widget.TextClock" -> {

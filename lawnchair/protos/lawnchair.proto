@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "app.lawnchair";
+option java_package = "com.android.androidium.lawnchair";
 option java_outer_classname = "LawnchairProto";
 
 import "google/protobuf/timestamp.proto";

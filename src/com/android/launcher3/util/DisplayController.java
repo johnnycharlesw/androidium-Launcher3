@@ -56,7 +56,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 import androidx.annotation.VisibleForTesting;
 
-import app.lawnchair.util.LawnchairWindowManagerProxy;
+import com.android.androidium.lawnchair.util.LawnchairWindowManagerProxy;
 import com.android.launcher3.InvariantDeviceProfile.DeviceType;
 import com.android.launcher3.LauncherPrefChangeListener;
 import com.android.launcher3.LauncherPrefs;

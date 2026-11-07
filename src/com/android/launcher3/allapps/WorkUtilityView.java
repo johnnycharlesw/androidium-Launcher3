@@ -29,8 +29,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Rect;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -59,9 +57,9 @@ import com.android.launcher3.logging.StatsLogManager;
 import com.android.launcher3.model.StringCache;
 import com.android.launcher3.views.ActivityContext;
 
-import app.lawnchair.font.FontManager;
-import app.lawnchair.theme.color.tokens.ColorTokens;
-import app.lawnchair.theme.drawable.DrawableTokens;
+import com.android.androidium.lawnchair.font.FontManager;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.theme.drawable.DrawableTokens;
 
 import java.util.ArrayList;
 

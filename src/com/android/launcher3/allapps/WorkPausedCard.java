@@ -27,13 +27,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.launcher3.R;
-import com.android.launcher3.Utilities;
 import com.android.launcher3.model.StringCache;
 import com.android.launcher3.views.ActivityContext;
 
-import app.lawnchair.font.FontManager;
-import app.lawnchair.theme.color.tokens.ColorTokens;
-import app.lawnchair.theme.drawable.DrawableTokens;
+import com.android.androidium.lawnchair.font.FontManager;
+import com.android.androidium.lawnchair.theme.color.tokens.ColorTokens;
+import com.android.androidium.lawnchair.theme.drawable.DrawableTokens;
 
 /**
  * Work profile toggle switch shown at the bottom of AllApps work tab

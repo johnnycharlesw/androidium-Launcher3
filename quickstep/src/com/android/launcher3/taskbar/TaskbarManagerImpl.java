@@ -127,7 +127,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.function.IntConsumer;
 
-import app.lawnchair.LawnchairApp;
+import com.android.androidium.lawnchair.LawnchairApp;
 
 /**
  * Class to manage taskbar lifecycle

@@ -62,7 +62,6 @@ import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
 import com.topjohnwu.superuser.Shell;
-import app.lawnchair.compatlib.utils.BitmapUtil;
 
 /**
  * Utility class containing methods to help manage image actions such as sharing, cropping, and

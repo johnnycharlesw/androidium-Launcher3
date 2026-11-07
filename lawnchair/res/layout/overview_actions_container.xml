@@ -16,7 +16,7 @@
 -->
 <!-- NOTE! don't add dimensions for margins / gravity to root view in this file, they need to be
      loaded at runtime. -->
-<app.lawnchair.overview.LawnchairOverviewActionsView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.android.androidium.lawnchair.overview.LawnchairOverviewActionsView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal|bottom">
@@ -33,7 +33,7 @@
             android:layout_height="1dp"
             android:layout_weight="1" />
 
-        <app.lawnchair.views.CustomButton
+        <com.android.androidium.lawnchair.views.CustomButton
             android:id="@+id/action_screenshot"
             style="@style/OverviewActionButton"
             android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:visibility="gone" />
 
-        <app.lawnchair.views.CustomButton
+        <com.android.androidium.lawnchair.views.CustomButton
             android:id="@+id/action_share"
             style="@style/OverviewActionButton"
             android:layout_width="wrap_content"
@@ -76,22 +76,7 @@
             android:layout_height="1dp"
             android:visibility="gone" />
 
-        <app.lawnchair.views.CustomButton
-            android:id="@+id/action_lens"
-            style="@style/OverviewActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_lens"
-            android:text="@string/action_lens" />
-
-        <Space
-            android:id="@+id/lens_space"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            android:visibility="gone" />
-
-        <app.lawnchair.views.CustomButton
+        <com.android.androidium.lawnchair.views.CustomButton
             style="@style/OverviewActionButton"
             android:id="@+id/action_clear_all"
             android:layout_width="wrap_content"
@@ -108,7 +93,7 @@
             android:layout_weight="1"
             android:visibility="gone" />
 
-        <app.lawnchair.views.CustomButton
+        <com.android.androidium.lawnchair.views.CustomButton
             style="@style/OverviewActionButton"
             android:id="@+id/action_locked"
             android:layout_width="wrap_content"
@@ -127,7 +112,7 @@
     </LinearLayout>
 
 
-    <app.lawnchair.views.CustomButton
+    <com.android.androidium.lawnchair.views.CustomButton
         android:id="@+id/action_save_app_pair"
         style="@style/OverviewActionButton"
         android:layout_width="wrap_content"
@@ -136,4 +121,4 @@
         android:layout_gravity="bottom|center_horizontal"
         android:visibility="gone" />
 
-</app.lawnchair.overview.LawnchairOverviewActionsView>
+</com.android.androidium.lawnchair.overview.LawnchairOverviewActionsView>

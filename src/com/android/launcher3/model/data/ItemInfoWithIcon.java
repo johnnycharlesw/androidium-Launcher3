@@ -27,7 +27,6 @@ import androidx.annotation.Nullable;
 
 import com.android.launcher3.Flags;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.graphics.ThemeManager;
 import com.android.launcher3.icons.BitmapInfo;
 import com.android.launcher3.icons.BitmapInfo.DrawableCreationFlags;
 import com.android.launcher3.icons.FastBitmapDrawable;
@@ -36,7 +35,7 @@ import com.android.launcher3.logging.FileLog;
 import com.android.launcher3.pm.PackageInstallInfo;
 import com.android.launcher3.util.ApiWrapper;
 
-import app.lawnchair.preferences.PreferenceManager;
+import com.android.androidium.lawnchair.preferences.PreferenceManager;
 
 /**
  * Represents an ItemInfo which also holds an icon.
